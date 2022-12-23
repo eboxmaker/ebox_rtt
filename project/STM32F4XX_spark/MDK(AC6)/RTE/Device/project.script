@@ -1,0 +1,6 @@
+load STM32F407ZETx 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "D:\Github\ebox\project\STM32F4XX_spark\MDK(AC6)\RTE\Device\STM32F407ZETx\" 
+set tpl_path "C:\Users\Administrator\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\MDK\CubeMX" 
+set dest_path "STM32F407ZETx" 
