@@ -1,5 +1,7 @@
 #include "calibration.h"
 #include "bsp_ebox.h"
+#include "config.h"
+
 ConfigCalibration config_cal;
 
 
@@ -88,13 +90,15 @@ int ConfigCalibration::buf_to_para()
 
 void ConfigCalibration::print(Uart &uart)
 {
-    uart.printf("===========ConfigCalibration===========\n");
+    cfgDebug("========ConfigCalibration========\n");
     for(int i = 0; i < 4; i++)
     {
+        cfgDebug("");      
         uart.printf("k[%d]:%0.6f\n",i,k[i]);      
+        cfgDebug("");      
         uart.printf("b[%d]:%0.6f\n",i,b[i]);    
     }     
-    uart.printf("================================\n");
+    cfgDebug("================================\n");
 }
 
 

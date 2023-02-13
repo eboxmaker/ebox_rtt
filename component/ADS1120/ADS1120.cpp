@@ -486,10 +486,12 @@ void Ads1120App::begin()
   
 //    setFIR(1);
 //    setIDACcurrent(0);
-//    UART.printf("reg0:0X%02X\n",readRegister(0));
-//    UART.printf("reg1:0X%02X\n",readRegister(1));
-//    UART.printf("reg2:0X%02X\n",readRegister(2));
-//    UART.printf("reg3:0X%02X\n",readRegister(3));
+    UART.printf("========ads1120 driver========\n");
+    UART.printf("reg0:0X%02X\n",readRegister(0));
+    UART.printf("reg1:0X%02X\n",readRegister(1));
+    UART.printf("reg2:0X%02X\n",readRegister(2));
+    UART.printf("reg3:0X%02X\n",readRegister(3));
+    UART.printf("===========================\n");
     state = 0;
     flag_update = false;
 }

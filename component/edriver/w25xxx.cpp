@@ -29,13 +29,13 @@
 
 
 #if EBOX_DEBUG_W25X_ENABLE
-#define w25xDebug(...)  rt_kprintf("[w25x]:%d: ",__LINE__),rt_kprintf(__VA_ARGS__ )
+#define w25xDebug(...)  rt_kprintf("[w25x:%d]: ",__LINE__),rt_kprintf(__VA_ARGS__ )
 #else
 #define w25xDebug(...)
 #endif
 
 #if EBOX_DEBUG_W25X_ENABLE_ERR
-#define w25xDebugErr(fmt, ...)  rt_kprintf("[w25x err]:%d: " fmt "\n", __LINE__, __VA_ARGS__)
+#define w25xDebugErr(fmt, ...)  rt_kprintf("[w25x err:%d]: " fmt "\n", __LINE__, __VA_ARGS__)
 #else
 #define w25xDebugErr(fmt, ...)
 #endif

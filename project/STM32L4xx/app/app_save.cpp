@@ -11,11 +11,11 @@ static void app_save_thread_entry(void* paremeter)
     sem_save_over = rt_sem_create("save", 1,RT_IPC_FLAG_FIFO );
     if(RT_NULL != sem_save_over)/*  */
     {
-        rt_kprintf("The semaphore was successfully created\r\n");
+        appDebug("The semaphore was successfully created\r\n");
     }
     else/*  */
     {
-        rt_kprintf("Failed to create semaphore\r\n");
+        appDebug("Failed to create semaphore\r\n");
         return;
     }
 

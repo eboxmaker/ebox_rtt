@@ -126,7 +126,7 @@ int gm5_mqtt_startup()
 int gm5_startup()
 {
     int ret = 0;
-    appDebug("wait 4g module.\n");
+    appDebug("gm5_startup£ºwait 4g module.\n");
     gm5.restart_hard();
     ret = gm5.wait_ready();
     if(ret)
@@ -179,7 +179,7 @@ void online_loop()
         case 0:
             if(gm5_startup())
             {
-                delay_ms(1000);
+                delay_ms(5000);
             }
             else
             {
