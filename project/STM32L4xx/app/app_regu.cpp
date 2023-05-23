@@ -58,21 +58,21 @@ void mode2()
         mark2 = millis();
         if(relay.isAcCh((Relay::Mode_t)(i+1)))
         {
-            delay_ms(ac_ch_timeout);
-//            temp->val[i] = analog_get((Relay::Mode_t)(i+1),ac_ch_timeout);
+            temp->val[i] = analog_get((Relay::Mode_t)(i+1),ac_ch_timeout);
+//            delay_ms(ac_ch_timeout);
         }
         else
         {
-//            temp->val[i] = analog_get((Relay::Mode_t)(i+1),dc_ch_timeout);
-            delay_ms(dc_ch_timeout);
+            temp->val[i] = analog_get((Relay::Mode_t)(i+1),dc_ch_timeout);
+//            delay_ms(dc_ch_timeout);
         }
         appDebug("[%d]time:%d,value:%d\n",i+1,millis() - mark2,(int)(temp->val[i]*1000));
     }
     for(int i = 8; i < 12; i++)
     {
         mark2 = millis();
-//        temp->val[i] = analog_get((Relay::Mode_t)(i+1),off_ch_timeout);
-            delay_ms(off_ch_timeout);
+        temp->val[i] = analog_get((Relay::Mode_t)(i+1),off_ch_timeout);
+//            delay_ms(off_ch_timeout);
         appDebug("[%d]time:%d,value:%d\n",i+1,millis() - mark2,(int)(temp->val[i]*1000));
     }   
     for(int i = 0; i < 12; i++)

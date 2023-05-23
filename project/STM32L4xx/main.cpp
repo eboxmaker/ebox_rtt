@@ -90,7 +90,7 @@ void setup() {
     }
     else
     {
-//        power_on(PwrGps);
+        power_on(PwrGps);
     }
     rtc_set_alarm_minute(config.sample_regu_interval);
     
