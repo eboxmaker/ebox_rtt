@@ -4,6 +4,7 @@
 #include "bsp_ebox.h"
 #include "power.h"
 #include "modbus_addr.h"
+#include "relay.h"
 
 uint32_t pwr_flag;
 
@@ -91,6 +92,9 @@ void lowpower_standby_enter(uint8_t index)
 //        set_sample_mode(sample_mode);
 //        return;
 //    }
+    relay.mode(Relay::Mode0DEFAULT);
+    delay_ms(100);
+
     rtc_set_alarm_minute(config.sample_regu_interval);
     UART.printf("!!!!!!enter stadnby,wake up after: %d min\n",config.sample_regu_interval);
     UART.flush();
